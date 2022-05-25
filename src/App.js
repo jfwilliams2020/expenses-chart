@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Balance } from "./Balance"
+import styled from "styled-components"
+import { Spending } from "./Spending";
 
-function App() {
+const StyledApp = styled.div`
+  max-width: 500px;
+  margin: auto;
+  margin-top: 100px;
+`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      <Balance balance={50} />
+      <Spending monthTotal={400.92} prevMonthTotal={490.34} />
+    </StyledApp>
   );
 }
 
